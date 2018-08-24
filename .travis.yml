@@ -57,24 +57,24 @@ install:
 
   # Install and build dependencies.
   - echo "Running install script..."
-  - "${ROOT_DIR}"/build-code.sh
+  - ${ROOT_DIR}/build-code.sh
 
 before_script:
 
   # Setup config for PHP/MySQL, settings.php, and install database.
   - echo "Running setup script..."
-  - "${ROOT_DIR}"/setup-config.sh
+  - ${ROOT_DIR}/setup-config.sh
 
   # Perform the site install after removing Xdebug since it seems faster.
   - echo "Running build script..."
-  - "{$ROOT_DIR}"/install-backdrop.sh
+  - ${ROOT_DIR}/install-backdrop.sh
 
 script:
 
   # Run Behat tests.
   - echo "Running Behat tests..."
-  - "${ROOT_DIR}"/run-behat-tests.sh
+  - ${ROOT_DIR}/run-behat-tests.sh
 
   # Run SimpleTests.
   - echo "Running SimpleTest tests..."
-  - "${ROOT_DIR}"/run-simpletests.sh
+  - ${ROOT_DIR}/run-simpletests.sh
