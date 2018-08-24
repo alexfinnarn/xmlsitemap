@@ -19,8 +19,7 @@ addons:
 services:
  - mysql
 
-# Cache Composer and db export.
-# Removed caching of drush since you have to clear drush cache to get new Drupal versions.
+# Cache Composer and db export.g
 cache:
   directories:
     - $HOME/.composer/cache/files
