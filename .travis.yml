@@ -45,15 +45,15 @@ install:
   - export JS_BEHAT_TAGS="~@broken&&@javascript"
 
   # SimpleTest group.
-  - export SIMPLETEST_CLASSES="XMLSitemapUnitTest XMLSitemapFunctionalTest"
+  - export SIMPLETEST_CLASSES="XMLSitemapUnitTest,XMLSitemapFunctionalTest"
 
   # Copy starter kit scripts to root for cleaner syntax.
-  - cd ${ROOT_DIR}
+  - cd "${ROOT_DIR}"
   - git clone https://github.com/alexfinnarn/testing-starter-scripts.git testing
-  - cp -R ${ROOT_DIR}/testing/tests/travis-ci/* ${ROOT_DIR}
+  - cp -R "${ROOT_DIR}"/testing/travis-ci/* "${ROOT_DIR}"
 
   # Pulls in any helper functions used later in scripts.
-  - source ${ROOT_DIR}/helper-functions.sh
+  - source "${ROOT_DIR}"/helper-functions.sh
 
   # Install and build dependencies.
   - echo "Running install script..."
@@ -67,7 +67,7 @@ before_script:
 
   # Perform the site install after removing Xdebug since it seems faster.
   - echo "Running build script..."
-  - {$ROOT_DIR}/install-backdrop.sh
+  - ${ROOT_DIR}/install-backdrop.sh
 
 script:
 
