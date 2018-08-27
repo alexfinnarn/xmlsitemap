@@ -45,7 +45,7 @@ install:
   - export JS_BEHAT_TAGS="~@broken&&@javascript"
 
   # SimpleTest group.
-  - export SIMPLETEST_CLASSES="XMLSitemapUnitTest XMLSitemapFunctionalTest"
+  - export SIMPLETEST_CLASSES="XMLSitemapFunctionalTest"
 
   # Copy starter kit scripts to root for cleaner syntax.
   - cd "${ROOT_DIR}"
